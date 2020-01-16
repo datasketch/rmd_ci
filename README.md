@@ -10,5 +10,5 @@ https://jellis18.github.io/post/2017-12-03-continuous-integration-hugo/
 git2r
 https://rpubs.com/chrimaho/GitHubAutomation
 
-
+http://www.goring.org/resources/Adding_CI_To_RMarkdown.html
 
