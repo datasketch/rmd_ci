@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ .Content }}
+{{ end }}
+
+{{ define "script" }}
+<script src='{{ "js/iFrameResizer.js" | absURL }}'></script>
+<script>
+  iFrameResize({ checkOrigin: false, heightCalculationMethod: 'bodyScroll', minHeight: 500 }, 'iframe')
+</script>
+{{ end }}

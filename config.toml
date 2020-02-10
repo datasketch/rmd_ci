@@ -1,0 +1,8 @@
+baseURL = "/"
+title = "Explora LATAM"
+publishDir = "docs"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+googleAnalytics = "UA-147649570-1"
+
+[blackfriday]
+  hrefTargetBlank = true
