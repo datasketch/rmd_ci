@@ -16,4 +16,6 @@ jobs:
         sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
         sudo apt update
         sudo apt install -y r-base
+    - name: Install devtools
+      run: Rscript -e 'install.packages("devtools")'
         
