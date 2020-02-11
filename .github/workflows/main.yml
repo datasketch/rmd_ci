@@ -17,5 +17,5 @@ jobs:
         sudo apt update
         sudo apt install -y r-base
     - name: Install devtools
-      run: Rscript -e 'install.packages("devtools")'
+      run: sudo Rscript -e 'install.packages("devtools")'
         
