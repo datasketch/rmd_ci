@@ -22,7 +22,7 @@ jobs:
       run: |
         sudo Rscript -e "install.packages('devtools')"
         sudo Rscript -e "install.packages('tidyverse')"
-        sudo Rscript -r "install.packages('dotenv')"
+        sudo Rscript -e "install.packages('dotenv')"
         sudo Rscript -e "devtools::install_github('jpmarindiaz/mop')"
         sudo Rscript -e "devtools::install_github('bergant/airtabler')"
     - name: Execute script
