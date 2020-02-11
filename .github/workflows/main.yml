@@ -1,4 +1,4 @@
-name: CI
+name: Deploy
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  setup:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -22,15 +22,12 @@ jobs:
       run: |
         sudo Rscript -e "install.packages('devtools')"
         sudo Rscript -e "install.packages('tidyverse')"
+        sudo Rscript -r "install.packages('dotenv')"
         sudo Rscript -e "devtools::install_github('jpmarindiaz/mop')"
         sudo Rscript -e "devtools::install_github('bergant/airtabler')"
-  build:
-    runs-on: [ubuntu-latest]
-    needs: [setup]
-    steps:
-      - name: Execute script
-        env:
-          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
-        run: |
-          echo AIRTABLE_API_KEY=$AIRTABLE_API_KEY >> .env
-          sudo Rscript ./scripts/generate-markdown-posts.R
+    - name: Execute script
+      env:
+        AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+      run: |
+        echo AIRTABLE_API_KEY=$AIRTABLE_API_KEY >> .env
+        sudo Rscript ./scripts/generate-markdown-posts.R
