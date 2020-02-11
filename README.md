@@ -1,3 +1,4 @@
+![Deploy](https://github.com/datasketch/rmd_ci/workflows/Deploy/badge.svg)
 
 auto commit to master with travis
 
