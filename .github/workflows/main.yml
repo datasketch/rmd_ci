@@ -24,3 +24,7 @@ jobs:
         sudo Rscript -e "install.packages('tidyverse')"
         sudo Rscript -e "devtools::install_github('jpmarindiaz/mop')"
         sudo Rscript -e "devtools::install_github('bergant/airtabler')"
+    - name: Execute script
+      env:
+        AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+      run: ls -la
