@@ -40,3 +40,6 @@ jobs:
         git add .
         git commit -m 'Updated build [skip ci]'
         git push origin master
+    - name: Catch error when no changes are made
+      if: failure()
+      run: echo "There were no changes on the generated reports"
